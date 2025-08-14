@@ -1,0 +1,18 @@
+from random import random, randint, sample
+"""
+Function, that takes 3 arguments: 
+- first two as range of elements "from - to", 
+- the third one as a sum of elements
+
+and returns a sorted list with unique values
+"""
+def get_numbers_ticket(min, max, quantity) -> list : # type hint
+
+    arr = []
+    while len(arr) != quantity:
+        arr.append(randint(min, max))
+    return sorted(sample(range(min, max), quantity))
+
+
+lottery_numbers = get_numbers_ticket(1, 49, 6)
+print("Ваші лотерейні числа:", lottery_numbers)
